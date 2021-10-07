@@ -88,19 +88,26 @@ namespace Calculator
             return result;
         }
 
-        public double Division() //divisin function that takes 2 values and divides them
+        public decimal Division() //divison function that takes 2 values and divides them
         {
-            double dResult;
-            double firstNum = this.firstNumber;
-            double secondNum = this.secondNumber;
-            if(secondNum == 0) // if user trying to divide by zero
+            
+            decimal dResult; //decimal instead of double cause of DivideByZeroException could not handle double
+            int firstNum = this.firstNumber;
+            int secondNum = this.secondNumber;
+           
+            try
+            {
+                dResult = (decimal)firstNum / secondNum;
+                return dResult;
+            }
+            catch (DivideByZeroException e)
             {
                 throw new ArgumentException("Cannot divide by zero!");
-            }
-            dResult = firstNum / secondNum; // a divided by b = result
-            return dResult;
+  
+            }  
         }
-
-
     }
+
+
+    
 }

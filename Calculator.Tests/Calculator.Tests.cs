@@ -81,7 +81,7 @@ namespace Calculator.Tests
         [InlineData(0, 3, 0)]
         [InlineData(5, 2, 2.5)]
         [InlineData(5, 0, 0)] // trying to divide by zero should fail
-        public void DivisionTest(int numOne, int numTwo, double expected) //Test of the Multiplication method in calculator class
+        public void DivisionTest(int numOne, int numTwo, decimal expected) //Test of the Multiplication method in calculator class
         {
             //Act (runs method)
             Calculator divTest = new Calculator(numOne, numTwo);
